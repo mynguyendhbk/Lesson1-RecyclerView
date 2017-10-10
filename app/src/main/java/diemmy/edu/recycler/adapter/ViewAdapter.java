@@ -7,19 +7,19 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.squareup.picasso.Picasso;
+import java.util.List;
 
 /**
  * Created by DELL on 10/10/2017.
  */
 
 public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ItemHolder>{
+    private List<ItemView> mItemViews;
 
-    private IViewAdapter mInterf;
-
-    public ViewAdapter(IViewAdapter interf){
-        this.mInterf = interf;
+    public ViewAdapter(List<ItemView> itemViews) {
+        this.mItemViews = itemViews;
     }
+
     @Override
     public ItemHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
@@ -29,16 +29,16 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ItemHolder>{
 
     @Override
     public void onBindViewHolder(ItemHolder holder, int position) {
-        ItemView item = mInterf.getData(position);
-        holder.tvName.setText(item.getName());
-        holder.tvGia.setText(item.getGia());
-        holder.imgAnh.setImageResource(item.getImg());
+        holder.tvName.setText(mItemViews.get(position).getmName());
+        holder.tvGia.setText(mItemViews.get(position).getPrice());
+        holder.imgAnh.setImageResource(mItemViews.get(position).getmImg());
     }
 
     @Override
     public int getItemCount() {
-        return mInterf.getCount();
+        return mItemViews.size();
     }
+
 
     public class ItemHolder extends RecyclerView.ViewHolder {
         private TextView tvName;
@@ -50,10 +50,5 @@ public class ViewAdapter extends RecyclerView.Adapter<ViewAdapter.ItemHolder>{
             tvGia = (TextView)itemView.findViewById(R.id.tv_gia);
             imgAnh = (ImageView)itemView.findViewById(R.id.img_anh);
         }
-    }
-    public interface IViewAdapter{
-        int getCount();
-        ItemView getData(int position);
-
     }
 }
