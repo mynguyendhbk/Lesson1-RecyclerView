@@ -1,4 +1,4 @@
-package diemmy.edu.recycler;
+package diemmy.edu.recycler.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,6 +8,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
+
+import diemmy.edu.recycler.R;
+import diemmy.edu.recycler.widget.ItemView;
 
 /**
  * Created by DELL on 10/10/2017.

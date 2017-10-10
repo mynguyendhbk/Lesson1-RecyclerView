@@ -1,4 +1,4 @@
-package diemmy.edu.recycler;
+package diemmy.edu.recycler.widget;
 
 /**
  * Created by DELL on 10/10/2017.

@@ -1,4 +1,4 @@
-package diemmy.edu.recycler;
+package diemmy.edu.recycler.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +7,10 @@ import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import diemmy.edu.recycler.widget.ItemView;
+import diemmy.edu.recycler.R;
+import diemmy.edu.recycler.adapter.ViewAdapter;
 
 public class MainActivity extends AppCompatActivity{
     private ViewAdapter mViewAdapter;
